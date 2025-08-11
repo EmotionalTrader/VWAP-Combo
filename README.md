@@ -1,93 +1,134 @@
-# VWAP-Combo 
-VWAP Combo: Weekly WVAP + Fibonacci levels and Daily WVAP + Standard Deviation levels 
-This TradingView Pine Script combines two powerful VWAP (Volume Weighted Average Price) indicators with different timeframes and deviation methods:
+# VWAP Combo: Weekly + Fibonacci Bands & Daily + Standard Deviation Bands
 
-- Daily VWAP with Standard Deviation Bands (Yellow line)
+A **TradingView Pine Script** that combines **two VWAP-based analysis methods** into one flexible indicator:
 
-        - Ideal for short-term scalping strategies
+1. **V1** — Weekly VWAP with Fibonacci-based standard deviation bands.
+2. **V2** — Daily VWAP with standard deviation bands.
 
-        - Shows standard deviation levels around the daily VWAP
+This suite is built for traders who want to track both macro (weekly) and micro (daily) price positioning against dynamic VWAP anchors.
 
-- Weekly VWAP with Fibonacci Extension Bands (Orange line)
+---
 
-        - Excellent for intraday to short swing trading
+## 📸 Screenshot
 
-        - Features colored zones based on Fibonacci extensions
+*(Add your screenshot here, e.g., `![VWAP Combo Example](Screenshot.JPG)`)*
 
+---
 
+## ✨ Features
 
-  Daily VWAP (Yellow) System
+- **Two independent VWAP modes**:
+  - **V1**: Weekly VWAP + ±Fibonacci SD bands
+  - **V2**: Daily VWAP + ±Standard deviation bands
+- **Customizable Parameters**:
+  - Fibonacci multipliers for V1
+  - Standard deviation multipliers for V2
+  - Color schemes and fill transparency
+- **Bar Coloring**:
+  - Highlight bullish/bearish conditions for each VWAP mode
+- **Previous VWAP Option**:
+  - Show prior daily VWAP for intraday reference
 
-    Core Line: Yellow VWAP calculated on daily timeframe
+---
 
-    Deviation Bands:
+## 📎 Direct TradingView Access
 
-        Gray lines at ±1.28 standard deviations (configurable)
+You can add this indicator to your TradingView chart directly from the public library:  
+**[VWAP Combo: Weekly + Fibo & Daily + Stand dev](https://www.tradingview.com/script/4QzabT8i-VWAP-Combo-Weekly-Fibo-Daily-Stand-dev/)**
 
-        Colored lines at ±2.01 standard deviations (configurable)
+My TradingView profile: **[EmotionalTrader777](https://www.tradingview.com/u/EmotionalTrader777/)**
 
-    Previous Day VWAP: Optional plot showing yesterday's VWAP as dotted line
+---
 
-    Bar Coloring: Option to color bars based on position relative to VWAP
+## 🛠 How It Works
 
+### **V1 – Weekly VWAP + Fibonacci Bands**
+- VWAP resets at the start of each week.
+- Standard deviation of price around VWAP is calculated.
+- Fibonacci multipliers (`fib1`, `fib2`) define the upper/lower band distances.
+- Useful for **macro trend anchoring** and spotting stretched price conditions.
 
+### **V2 – Daily VWAP + Standard Deviation Bands**
+- VWAP resets at the start of each day.
+- Two sets of ±standard deviation bands define near-term price extremes.
+- Optional previous-day VWAP plotting for intraday bias reference.
 
-Weekly VWAP (Orange) System
+---
 
-    Core Line: Orange VWAP calculated on weekly timeframe
+## ⚡ Use Cases
 
-    Fibonacci Zones:
+- **Support & Resistance**:  
+  VWAP bands act as dynamic S/R levels.
+- **Trend Context**:  
+  Price location relative to weekly/daily VWAP helps define bias.
+- **Volatility Analysis**:  
+  Standard deviation bands adapt to volatility conditions.
+- **Trade Timing**:  
+  Use confluence between daily and weekly VWAP bands to find high-probability setups.
 
-        Red zone above: 1.618-2.618 Fibonacci extensions of standard deviation
+---
 
-        Green zone below: 1.618-2.618 Fibonacci extensions of standard deviation
+## 📋 Inputs
 
-    Deviation Filter: Only shows zones when weekly standard deviation > threshold (default 150)
+### **General**
+| Input            | Description                           |
+|------------------|---------------------------------------|
+| Show V1          | Toggle weekly VWAP + Fibo bands       |
+| Show V2          | Toggle daily VWAP + SD bands          |
 
-    Reversal Signals: Identifies potential reversal points at zone boundaries
+### **V1 – Weekly VWAP + Fibo**
+| Input            | Description                           | Default |
+|------------------|---------------------------------------|---------|
+| Fibo extension 1 | 1st band multiplier                   | 1.618   |
+| Fibo extension 2 | 2nd band multiplier                   | 2.618   |
+| Deviation filter | Only trigger if SD > threshold        | 150     |
+| Colors           | VWAP line, up bands, down bands       | Custom  |
 
+### **V2 – Daily VWAP + Stdev**
+| Input            | Description                           | Default |
+|------------------|---------------------------------------|---------|
+| SD multipliers   | ±1st and ±2nd band multipliers         | 1.28 / 2.01 |
+| Colors           | VWAP line, up fill, down fill         | Custom  |
+| Show prev VWAP   | Toggle previous daily VWAP            | false   |
 
+---
 
-🛠 Customization Options
+## 🎨 Color Scheme (Defaults)
+- **V1 VWAP** — Orange
+- **V1 Bands Up** — Red
+- **V1 Bands Down** — Lime
+- **V2 VWAP** — Yellow
+- **V2 Bands** — Gray (inner), Red/Green (outer)
 
-Users can configure:
+---
 
-    Colors for all lines and zones
+## 📦 Installation
 
-    Transparency levels for shaded areas
+### Option 1 — Add Directly on TradingView (Easiest)
+Add the indicator directly from the public library:  
+**[VWAP Combo: Weekly + Fibo & Daily + Stand dev](https://www.tradingview.com/script/4QzabT8i-VWAP-Combo-Weekly-Fibo-Daily-Stand-dev/)**
 
-    Fibonacci extension values (default 1.618 and 2.618)
+---
 
-    Standard deviation multipliers
+### Option 2 — Install from Code
+1. Copy the code from `VWAP-Combo-Weekly-Fibo-Daily-Stdev.pine`
+2. Open **TradingView**
+3. Go to **Pine Editor**
+4. Paste the code and click **Add to Chart**
+5. Save the script to your account
 
-    Toggle visibility of either system
+---
 
-    Enable/disable bar coloring features
+## 📜 License
 
+MIT License — You’re free to use, modify, and share this script.
 
+---
 
-💡 Trading Applications
+## 👤 Author
 
-    Daily System: Best for mean-reversion strategies within the trading day
+**EmotionalTrader**  
+- Futures trader, Python learner, aspiring asset trader, horse whisperer, space cowboy  
+- [TradingView Profile](https://www.tradingview.com/u/EmotionalTrader777/)  
+- [GitHub](https://github.com/EmotionalTrader)
 
-    Weekly System: Helps identify larger swing trade opportunities
-
-    Combined they provide multi-timeframe context for better trade decisions
-
-
-
-📈 How to Use
-
-    Add to chart in TradingView
-
-    Configure settings to match your trading style
-
-    Look for:
-
-        Price reactions at deviation bands
-
-        Zone transitions between red/green areas
-
-        Confluence between daily and weekly levels
-
-Note: Works best on liquid assets with good volume profiles. I use it for ES and NQ but it also works good on commodoties like Gold, Oil etc.  
