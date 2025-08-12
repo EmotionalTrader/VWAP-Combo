@@ -7,6 +7,11 @@ A **TradingView Pine Script** that combines **two VWAP-based analysis methods** 
 
 This suite is built for traders who want to track both macro (weekly) and micro (daily) price positioning against dynamic VWAP anchors.
 
+---
+
+## 📸 Screenshot
+
+![VWAP-COMBO](Screenshot.JPG)
 
 ---
 
