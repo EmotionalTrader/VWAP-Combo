@@ -7,6 +7,9 @@ A **TradingView Pine Script** that combines **two VWAP-based analysis methods** 
 
 This suite is built for traders who want to track both macro (weekly) and micro (daily) price positioning against dynamic VWAP anchors.
 
+Note on Code Origin:
+The Pine Script code was initially generated with the help of large language models (LLMs) to speed up the development process. However, all trading algorithms, logic, and parameter settings are my own original work. Each indicator has been thoroughly tested and deployed on TradingView, where it’s actively used and has been boosted by 30+ traders within the first days of release.
+
 ---
 
 ## 📸 Screenshot
